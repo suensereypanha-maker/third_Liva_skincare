@@ -654,6 +654,52 @@ class FrontendController
     }
 
     /**
+     * About brand view.
+     */
+    public function about(): View
+    {
+        return view('frontend.about.index');
+    }
+
+    /**
+     * Contact concierge view.
+     */
+    public function contact(): View
+    {
+        return view('frontend.contact.index');
+    }
+
+    /**
+     * Favorites / Wishlist view.
+     */
+    public function wishlist(): View
+    {
+        $allProducts = $this->getProducts();
+        // Provide 2 default favorite luxury items
+        $wishlistProducts = array_values(array_filter($allProducts, function ($p) {
+            return in_array($p['slug'], ['liva-night-cream', 'liva-brightening-serum']);
+        }));
+
+        return view('frontend.wishlist.index', compact('wishlistProducts'));
+    }
+
+    /**
+     * Login view.
+     */
+    public function login(): View
+    {
+        return view('frontend.auth.login');
+    }
+
+    /**
+     * Register view.
+     */
+    public function register(): View
+    {
+        return view('frontend.auth.register');
+    }
+
+    /**
      * Switch language locale.
      */
     public function switchLang(string $locale): RedirectResponse

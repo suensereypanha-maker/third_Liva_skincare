@@ -61,9 +61,9 @@
                 <ul class="space-y-2 text-xs sm:text-sm text-[#EADFC7]/75">
                     <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">{{ __('frontend.nav.home') }}</a></li>
                     <li><a href="{{ route('products.index') }}" class="hover:text-white transition-colors">{{ __('frontend.nav.all_products') }}</a></li>
-                    <li><a href="{{ route('account.dashboard') }}" class="hover:text-white transition-colors">{{ __('frontend.nav.about') }}</a></li>
+                    <li><a href="{{ route('about.index') }}" class="hover:text-white transition-colors">{{ __('frontend.nav.about') }}</a></li>
                     <li><a href="{{ route('products.index', ['category' => 'skincare']) }}" class="hover:text-white transition-colors">{{ __('frontend.nav.skincare') }}</a></li>
-                    <li><a href="#footer" class="hover:text-white transition-colors">{{ __('frontend.nav.contact') }}</a></li>
+                    <li><a href="{{ route('contact.index') }}" class="hover:text-white transition-colors">{{ __('frontend.nav.contact') }}</a></li>
                 </ul>
             </div>
 

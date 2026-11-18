@@ -50,6 +50,11 @@ class ExportStaticSite extends Command
             $pages = [
                 '' => fn () => $controller->index(new Request),
                 'products' => fn () => $controller->products(new Request),
+                'about' => fn () => $controller->about(),
+                'contact' => fn () => $controller->contact(),
+                'wishlist' => fn () => $controller->wishlist(),
+                'login' => fn () => $controller->login(),
+                'register' => fn () => $controller->register(),
                 'cart' => fn () => $controller->cart(),
                 'checkout' => fn () => $controller->checkout(),
                 'order-success' => fn () => $controller->orderSuccess(),
