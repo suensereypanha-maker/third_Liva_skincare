@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-khmer: 'Kantumruy Pro', 'Battambang', system-ui, sans-serif;
+
+    /* LIVA Luxury Gold & Cream Palette (Inspired by Official Brand Image) */
+    --color-liva-50: #FBF9F5;
+    --color-liva-100: #F5EFEB;
+    --color-liva-200: #EADFC7;
+    --color-liva-300: #DFD1B0;
+    --color-liva-400: #C5A059;
+    --color-liva-500: #B58E3E;
+    --color-liva-600: #997528;
+    --color-liva-700: #7A5B1C;
+    --color-liva-800: #4A3710;
+    --color-liva-900: #261C07;
+
+    --color-liva-ivory: #FAF7F2;
+    --color-liva-gold: #B58E3E;
+    --color-liva-gold-light: #C5A059;
+    --color-liva-gold-dark: #997528;
+    --color-liva-dark: #1C1917;
+    --color-liva-footer: #171513;
+}
+
+/* Khmer Typography Adjustments */
+html[lang="km"] {
+    font-family: 'Kantumruy Pro', 'Battambang', system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3,
+html[lang="km"] h4 {
+    line-height: 1.4;
+}
+
+/* Custom Gold Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #FBF9F5;
+}
+::-webkit-scrollbar-thumb {
+    background: #DFD1B0;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #B58E3E;
+}
