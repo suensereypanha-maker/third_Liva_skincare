@@ -150,7 +150,7 @@ return [
         'full_name' => 'Full Name',
         'phone' => 'Phone Number',
         'email' => 'Email Address',
-        'address' => 'Street Address / Building',
+        'address' => 'Address',
         'city' => 'City / Province',
         'order_note' => 'Special Delivery Notes (Optional)',
     ],
