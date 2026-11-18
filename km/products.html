@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles & Scripts via Vite -->
-    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
+    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BF2MTi85.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BF2MTi85.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
     <style>
         body {
             font-family: &#039;Kantumruy Pro&#039;, sans-serif;
@@ -106,7 +106,7 @@
                 <div class="relative" id="lang-menu-wrapper">
                     <button type="button" 
                             id="lang-menu-btn"
-                            class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full border border-[#EADFC7] bg-[#FAF7F2] hover:bg-[#F5EFEB] text-stone-800 text-xs font-bold transition-all shrink-0">
+                            class="flex items-center gap-1.5 px-2 py-1.5 bg-transparent border-0 rounded-none text-stone-800 hover:text-[#B58E3E] text-xs font-bold transition-colors shrink-0 focus:outline-none">
                                                     <span class="text-sm sm:text-base leading-none">🇰🇭</span>
                             <span class="hidden sm:inline">ខ្មែរ</span>
                                                 <svg class="w-3 h-3 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,17 +115,17 @@
                     </button>
 
                     <!-- Language Dropdown -->
-                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-3xl shadow-2xl border border-[#EADFC7] py-2 z-50 animate-in fade-in slide-in-from-top-1">
-                        <div class="px-4 py-1 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-[#F5EFEB] mb-1">
+                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 bg-[#FAF7F2] border-0 rounded-none shadow-lg py-2 z-50 animate-in fade-in slide-in-from-top-1">
+                        <div class="px-3 py-1 text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">
                             ភាសា
                         </div>
                         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products" 
-                           class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-stone-700 hover:bg-[#FAF7F2] hover:text-[#B58E3E] transition-colors ">
+                           class="flex items-center gap-2.5 px-3 py-2 text-xs font-bold transition-colors text-stone-700 hover:text-[#B58E3E]">
                             <span class="text-base">🇬🇧</span>
                             <span>English</span>
                                                     </a>
                         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products" 
-                           class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-stone-700 hover:bg-[#FAF7F2] hover:text-[#B58E3E] transition-colors bg-[#F5EFEB] text-[#B58E3E]">
+                           class="flex items-center gap-2.5 px-3 py-2 text-xs font-bold transition-colors text-[#B58E3E]">
                             <span class="text-base">🇰🇭</span>
                             <span>ភាសាខ្មែរ (Khmer)</span>
                                                             <svg class="w-3.5 h-3.5 ml-auto text-[#B58E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
@@ -169,7 +169,7 @@
                     </button>
 
                     <!-- User Auth Dropdown -->
-                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64  p-4 z-50 animate-in fade-in slide-in-from-top-1">
+                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-[#FAF7F2] border-0 rounded-none shadow-lg p-4 z-50 animate-in fade-in slide-in-from-top-1">
                        
 
                         <div class="pt-3 space-y-2">
@@ -1004,7 +1004,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមយប់សារធាតុផ្សំមាស (Liva Night Cream)');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមយប់សារធាតុផ្សំមាស (Liva Night Cream)');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1072,7 +1072,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សេរ៉ូមបំប៉នស្បែកភ្លឺថ្លាពន្លកមាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សេរ៉ូមបំប៉នស្បែកភ្លឺថ្លាពន្លកមាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1141,7 +1141,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ហ្វូមលាងមុខសារធាតុរុក្ខជាតិមាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ហ្វូមលាងមុខសារធាតុរុក្ខជាតិមាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1209,7 +1209,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ទឹកជូតស្បែកមុខ (Toner) កោសិកាមាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ទឹកជូតស្បែកមុខ (Toner) កោសិកាមាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1277,7 +1277,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមការពារពេលថ្ងៃស្បែកភ្លឺរលោង');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមការពារពេលថ្ងៃស្បែកភ្លឺរលោង');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1345,7 +1345,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេការពារកម្ដៅថ្ងៃ SPF50+ ស្រទន់');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេការពារកម្ដៅថ្ងៃ SPF50+ ស្រទន់');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1413,7 +1413,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ម៉ាសគ្រីមចិញ្ចឹមស្បែកជ្រៅ');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ម៉ាសគ្រីមចិញ្ចឹមស្បែកជ្រៅ');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1481,7 +1481,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ស្ព្រាយបាញ់មុខផ្ដល់សំណើមរុក្ខជាតិមាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ស្ព្រាយបាញ់មុខផ្ដល់សំណើមរុក្ខជាតិមាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1549,7 +1549,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមលាបបំប៉នជុំវិញភ្នែក peptide មាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមលាបបំប៉នជុំវិញភ្នែក peptide មាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1617,7 +1617,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេលាបបំប៉នស្បែកដងខ្លួនសូត្រមាស');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេលាបបំប៉នស្បែកដងខ្លួនសូត្រមាស');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1685,7 +1685,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សាប៊ូដុសខ្លួនរុក្ខជាតិមាសផ្ដល់សំណើម');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សាប៊ូដុសខ្លួនរុក្ខជាតិមាសផ្ដល់សំណើម');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -1753,7 +1753,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឈុតថែរក្សាសម្រស់ប្រណិត (Ritual Collection)');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឈុតថែរក្សាសម្រស់ប្រណិត (Ritual Collection)');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -2134,6 +2134,9 @@
             syncWishlistIcons();
             if (typeof window.syncWishlistPage === 'function') {
                 window.syncWishlistPage(isAdded ? null : slug);
+            }
+            if (typeof window.syncCartFavorites === 'function') {
+                window.syncCartFavorites();
             }
         }
 
