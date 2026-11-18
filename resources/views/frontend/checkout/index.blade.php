@@ -87,28 +87,13 @@
 
                 <!-- Options -->
                 <div class="space-y-3">
-                    
-                    <!-- Option 1: Credit / Debit Card & ABA -->
-                    <label class="block cursor-pointer">
-                        <div class="payment-method-card p-4 rounded-2xl border-2 border-[#B58E3E] bg-[#FAF7F2] flex items-center justify-between transition-all">
-                            <div class="flex items-center gap-3">
-                                <input type="radio" name="payment_method" value="card" checked class="text-[#B58E3E] focus:ring-[#B58E3E]">
-                                <span class="font-bold text-sm text-stone-900">{{ __('frontend.checkout.card') }}</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="px-2 py-0.5 bg-white border border-stone-200 rounded text-[11px] font-black text-blue-900">VISA</span>
-                                <span class="px-2 py-0.5 bg-white border border-stone-200 rounded text-[11px] font-black text-red-600">Mastercard</span>
-                                <span class="px-2 py-0.5 bg-[#015F7A] text-white rounded text-[11px] font-black">ABA</span>
-                            </div>
-                        </div>
-                    </label>
 
-                    <!-- Option 2: Bank Transfer (KHQR / ABA Bank) -->
+                    <!-- Bank Transfer (KHQR / ABA Bank) - Primary Default -->
                     <label class="block cursor-pointer">
-                        <div class="payment-method-card p-4 rounded-2xl border border-[#EADFC7] hover:border-[#B58E3E] bg-white transition-all">
+                        <div class="payment-method-card p-4 rounded-2xl border-2 border-[#B58E3E] bg-[#FAF7F2] transition-all">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-3">
-                                    <input type="radio" name="payment_method" value="bank_transfer" class="text-[#B58E3E] focus:ring-[#B58E3E]">
+                                    <input type="radio" name="payment_method" value="bank_transfer" checked class="text-[#B58E3E] focus:ring-[#B58E3E]">
                                     <div>
                                         <span class="font-bold text-sm text-stone-900 block">{{ __('frontend.checkout.bank_transfer') }}</span>
                                         <span class="text-[11px] text-stone-500 hidden sm:block">{{ __('frontend.checkout.bank_transfer_desc') }}</span>
@@ -125,7 +110,7 @@
                             </div>
 
                             <!-- Expandable Bank Transfer Details (Visible when Bank Transfer is Selected) -->
-                            <div id="bank-transfer-details" class="hidden mt-4 pt-4 border-t border-[#EADFC7] space-y-4 animate-in fade-in">
+                            <div id="bank-transfer-details" class="mt-4 pt-4 border-t border-[#EADFC7] space-y-4 animate-in fade-in">
                                 
                                 <!-- Bank Tabs: ABA Bank (Default) vs Canadia Bank -->
                                 <div class="flex items-center gap-2 pb-1">
@@ -330,7 +315,7 @@
                     @foreach($items as $it)
                         <div class="flex items-center justify-between text-xs sm:text-sm">
                             <div class="flex items-center gap-2.5">
-                                <img src="{{ $it['image'] }}" alt="{{ $it['name'] }}" class="w-10 h-10 rounded-xl bg-[#FAF7F2] border border-[#EADFC7] p-1 object-contain">
+                                <img src="{{ $it['image'] }}" alt="{{ $it['name'] }}" class="w-10 h-10 object-contain">
                                 <div>
                                     <span class="font-bold text-stone-800 block line-clamp-1">
                                         {{ app()->getLocale() === 'km' && !empty($it['name_km']) ? $it['name_km'] : $it['name'] }}

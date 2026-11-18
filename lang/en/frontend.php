@@ -9,6 +9,7 @@ return [
 
     'nav' => [
         'home' => 'Home',
+        'all_products' => 'All Products',
         'skincare' => 'Skincare',
         'body_care' => 'Body Care',
         'beauty_tools' => 'Beauty Tools',
