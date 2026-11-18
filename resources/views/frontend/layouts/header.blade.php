@@ -42,7 +42,6 @@
             <!-- Middle: Desktop Navigation Links -->
             @php
                 $isHomeActive = request()->routeIs('home') && !request()->has('category') && !request()->has('q');
-                $isAllProductsActive = request()->routeIs('products.index') || request()->has('category') || request()->has('q');
                 $isAboutActive = request()->routeIs('about.index');
                 $isContactActive = request()->routeIs('contact.index');
             @endphp
@@ -51,12 +50,6 @@
                 <a href="{{ route('home') }}" 
                    class="py-1.5 px-3 whitespace-nowrap shrink-0 transition-all duration-200 border-b-2 {{ $isHomeActive ? 'text-[#B58E3E] font-bold border-[#B58E3E]' : 'text-stone-700 font-medium hover:text-[#B58E3E] border-transparent hover:border-[#B58E3E]/40' }}">
                     {{ __('frontend.nav.home') }}
-                </a>
-
-                <!-- All Products -->
-                <a href="{{ route('products.index') }}" 
-                   class="py-1.5 px-3 whitespace-nowrap shrink-0 transition-all duration-200 border-b-2 {{ $isAllProductsActive ? 'text-[#B58E3E] font-bold border-[#B58E3E]' : 'text-stone-700 font-medium hover:text-[#B58E3E] border-transparent hover:border-[#B58E3E]/40' }}">
-                    {{ __('frontend.nav.all_products') }}
                 </a>
 
                 <!-- About -->
