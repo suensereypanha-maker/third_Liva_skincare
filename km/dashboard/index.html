@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles & Scripts via Vite -->
-    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-D5dayl6h.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-D5dayl6h.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
+    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
     <style>
         body {
             font-family: &#039;Kantumruy Pro&#039;, sans-serif;
@@ -140,7 +140,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span class="absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
+                    <span class="wishlist-badge-count absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
                         2
                     </span>
                 </a>
@@ -353,7 +353,7 @@
     <!-- Wishlist / Favorites -->
     <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/wishlist" class="relative flex flex-col items-center gap-0.5 text-stone-500 hover:text-[#B58E3E]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        <span class="absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
+        <span class="wishlist-badge-count absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
         <span class="text-[9px]">ចំណូលចិត្ត</span>
     </a>
 
@@ -877,8 +877,79 @@
             }, 3000);
         }
 
+        // Global Wishlist Persistence & Synchronization (localStorage)
+        function getWishlist() {
+            try {
+                const saved = localStorage.getItem('liva_wishlist');
+                if (saved !== null) {
+                    return JSON.parse(saved);
+                }
+            } catch (e) {}
+            return ['liva-night-cream', 'liva-brightening-serum'];
+        }
+
+        function saveWishlist(items) {
+            try {
+                localStorage.setItem('liva_wishlist', JSON.stringify(items));
+            } catch (e) {}
+            updateWishlistBadges(items.length);
+        }
+
+        function updateWishlistBadges(count) {
+            document.querySelectorAll('.wishlist-badge-count').forEach(el => {
+                el.textContent = count;
+                if (count > 0) {
+                    el.style.display = 'flex';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        function syncWishlistIcons() {
+            const list = getWishlist();
+            updateWishlistBadges(list.length);
+            document.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
+                const slug = btn.getAttribute('data-wishlist-slug');
+                const svg = btn.querySelector('svg');
+                if (!slug || !svg) return;
+                if (list.includes(slug)) {
+                    btn.classList.add('text-[#B58E3E]');
+                    btn.classList.remove('text-stone-700', 'text-stone-500');
+                    svg.classList.add('fill-current');
+                    svg.setAttribute('fill', 'currentColor');
+                    svg.style.fill = 'currentColor';
+                } else {
+                    btn.classList.remove('text-[#B58E3E]');
+                    btn.classList.add('text-stone-700');
+                    svg.classList.remove('fill-current');
+                    svg.setAttribute('fill', 'none');
+                    svg.style.fill = 'none';
+                }
+            });
+        }
+
+        function toggleWishlist(slug, name, btnEl) {
+            let list = getWishlist();
+            const idx = list.indexOf(slug);
+            const isAdded = idx === -1;
+            if (isAdded) {
+                list.push(slug);
+                showToast('ចំណូលចិត្ត', 'Added ' + name + ' to favorites');
+            } else {
+                list.splice(idx, 1);
+                showToast('ចំណូលចិត្ត', 'Removed ' + name + ' from favorites');
+            }
+            saveWishlist(list);
+            syncWishlistIcons();
+            if (typeof window.syncWishlistPage === 'function') {
+                window.syncWishlistPage(isAdded ? null : slug);
+            }
+        }
+
         // Floating contact toggle (Telegram & Facebook)
         document.addEventListener('DOMContentLoaded', function () {
+            syncWishlistIcons();
             const contactBtn = document.getElementById('floating-contact-btn');
             const popup = document.getElementById('contact-popup-menu');
             const iconChat = document.getElementById('contact-icon-chat');

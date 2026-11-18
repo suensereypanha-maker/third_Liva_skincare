@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles & Scripts via Vite -->
-    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-D5dayl6h.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-D5dayl6h.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
+    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-CTABlQWV.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
     <style>
         body {
             font-family: &#039;Kantumruy Pro&#039;, sans-serif;
@@ -140,7 +140,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span class="absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
+                    <span class="wishlist-badge-count absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
                         2
                     </span>
                 </a>
@@ -353,7 +353,7 @@
     <!-- Wishlist / Favorites -->
     <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/wishlist" class="relative flex flex-col items-center gap-0.5 text-stone-500 hover:text-[#B58E3E]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        <span class="absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
+        <span class="wishlist-badge-count absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
         <span class="text-[9px]">ចំណូលចិត្ត</span>
     </a>
 
@@ -947,7 +947,7 @@
 
             <!-- Product Cards Container: supports Grid and List views -->
             <div id="products-catalog-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 transition-all duration-300">
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="16"
      data-category="cream"
      data-parent-category="skincare">
@@ -964,16 +964,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -20%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា គ្រីមយប់សារធាតុផ្សំមាស (Liva Night Cream)');" 
+                    data-wishlist-slug="liva-night-cream"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-night-cream', 'លីវ៉ា គ្រីមយប់សារធាតុផ្សំមាស (Liva Night Cream)', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -981,7 +982,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-night-cream" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1004,7 +1005,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមយប់សារធាតុផ្សំមាស (Liva Night Cream)');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1014,7 +1015,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="21.25"
      data-category="serum"
      data-parent-category="skincare">
@@ -1031,16 +1032,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -15%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា សេរ៉ូមបំប៉នស្បែកភ្លឺថ្លាពន្លកមាស');" 
+                    data-wishlist-slug="liva-brightening-serum"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-brightening-serum', 'លីវ៉ា សេរ៉ូមបំប៉នស្បែកភ្លឺថ្លាពន្លកមាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1048,7 +1050,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-brightening-serum" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1071,7 +1073,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សេរ៉ូមបំប៉នស្បែកភ្លឺថ្លាពន្លកមាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1081,7 +1083,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="13.5"
      data-category="cleanser"
      data-parent-category="skincare">
@@ -1098,17 +1100,18 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center gap-1 bg-gradient-to-r from-[#997528] to-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center gap-1 bg-gradient-to-r from-[#997528] to-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         <span>✦</span>
                         <span>លក់ដាច់បំផុត</span>
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ហ្វូមលាងមុខសារធាតុរុក្ខជាតិមាស');" 
+                    data-wishlist-slug="liva-facial-cleanser"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-facial-cleanser', 'លីវ៉ា ហ្វូមលាងមុខសារធាតុរុក្ខជាតិមាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1116,7 +1119,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-facial-cleanser" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1139,7 +1142,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ហ្វូមលាងមុខសារធាតុរុក្ខជាតិមាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1149,7 +1152,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="12.8"
      data-category="toner"
      data-parent-category="skincare">
@@ -1166,16 +1169,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -25%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ទឹកជូតស្បែកមុខ (Toner) កោសិកាមាស');" 
+                    data-wishlist-slug="liva-toner"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-toner', 'លីវ៉ា ទឹកជូតស្បែកមុខ (Toner) កោសិកាមាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1183,7 +1187,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-toner" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1206,7 +1210,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ទឹកជូតស្បែកមុខ (Toner) កោសិកាមាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1216,7 +1220,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="16.8"
      data-category="cream"
      data-parent-category="skincare">
@@ -1233,16 +1237,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -18%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា គ្រីមការពារពេលថ្ងៃស្បែកភ្លឺរលោង');" 
+                    data-wishlist-slug="liva-day-cream"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-day-cream', 'លីវ៉ា គ្រីមការពារពេលថ្ងៃស្បែកភ្លឺរលោង', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1250,7 +1255,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-day-cream" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1273,7 +1278,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមការពារពេលថ្ងៃស្បែកភ្លឺរលោង');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1283,7 +1288,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="18.5"
      data-category="sunscreen"
      data-parent-category="skincare">
@@ -1300,16 +1305,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -22%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ឡេការពារកម្ដៅថ្ងៃ SPF50+ ស្រទន់');" 
+                    data-wishlist-slug="liva-sunscreen-spf50"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-sunscreen-spf50', 'លីវ៉ា ឡេការពារកម្ដៅថ្ងៃ SPF50+ ស្រទន់', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1317,7 +1323,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-sunscreen-spf50" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1340,7 +1346,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេការពារកម្ដៅថ្ងៃ SPF50+ ស្រទន់');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1350,7 +1356,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="11.9"
      data-category="sheet_mask"
      data-parent-category="mask">
@@ -1367,16 +1373,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -17%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ម៉ាសគ្រីមចិញ្ចឹមស្បែកជ្រៅ');" 
+                    data-wishlist-slug="liva-mask-sheet"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-mask-sheet', 'លីវ៉ា ម៉ាសគ្រីមចិញ្ចឹមស្បែកជ្រៅ', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1384,7 +1391,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-mask-sheet" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1407,7 +1414,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ម៉ាសគ្រីមចិញ្ចឹមស្បែកជ្រៅ');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1417,7 +1424,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="14.4"
      data-category="toner"
      data-parent-category="skincare">
@@ -1434,16 +1441,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -20%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ស្ព្រាយបាញ់មុខផ្ដល់សំណើមរុក្ខជាតិមាស');" 
+                    data-wishlist-slug="liva-facial-mist"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-facial-mist', 'លីវ៉ា ស្ព្រាយបាញ់មុខផ្ដល់សំណើមរុក្ខជាតិមាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1451,7 +1459,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-facial-mist" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1474,7 +1482,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ស្ព្រាយបាញ់មុខផ្ដល់សំណើមរុក្ខជាតិមាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1484,7 +1492,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="15.3"
      data-category="cream"
      data-parent-category="skincare">
@@ -1501,16 +1509,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -15%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា គ្រីមលាបបំប៉នជុំវិញភ្នែក peptide មាស');" 
+                    data-wishlist-slug="liva-eye-cream"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-eye-cream', 'លីវ៉ា គ្រីមលាបបំប៉នជុំវិញភ្នែក peptide មាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1518,7 +1527,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-eye-cream" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1541,7 +1550,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា គ្រីមលាបបំប៉នជុំវិញភ្នែក peptide មាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1551,7 +1560,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="17.6"
      data-category="body_lotion"
      data-parent-category="body_care">
@@ -1568,16 +1577,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -20%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ឡេលាបបំប៉នស្បែកដងខ្លួនសូត្រមាស');" 
+                    data-wishlist-slug="liva-body-lotion"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-body-lotion', 'លីវ៉ា ឡេលាបបំប៉នស្បែកដងខ្លួនសូត្រមាស', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1585,7 +1595,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-body-lotion" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1608,7 +1618,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឡេលាបបំប៉នស្បែកដងខ្លួនសូត្រមាស');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1618,7 +1628,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="14.5"
      data-category="body_wash"
      data-parent-category="body_care">
@@ -1635,16 +1645,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -19%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា សាប៊ូដុសខ្លួនរុក្ខជាតិមាសផ្ដល់សំណើម');" 
+                    data-wishlist-slug="liva-revitalizing-body-wash"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-revitalizing-body-wash', 'លីវ៉ា សាប៊ូដុសខ្លួនរុក្ខជាតិមាសផ្ដល់សំណើម', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1652,7 +1663,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-revitalizing-body-wash" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1675,7 +1686,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា សាប៊ូដុសខ្លួនរុក្ខជាតិមាសផ្ដល់សំណើម');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1685,7 +1696,7 @@
     </div>
 
 </div>
-                                    <div class="product-card-item group bg-white rounded-3xl overflow-hidden border border-[#EADFC7]/90 hover:border-[#B58E3E] shadow-xs hover:shadow-xl hover:shadow-stone-900/10 transition-all duration-300 flex flex-col justify-between relative h-full"
+                                    <div class="product-card-item group bg-transparent transition-all duration-300 flex flex-col justify-between relative h-full"
      data-price="29.5"
      data-category="brush"
      data-parent-category="beauty_tools">
@@ -1702,16 +1713,17 @@
 
         <!-- Top Badges & Wishlist: Floating Over the Full Width Image -->
         <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-full shadow-md whitespace-nowrap pointer-events-auto">
+                                                <span class="inline-flex items-center bg-[#B58E3E] text-white font-extrabold text-[10px] sm:text-xs px-2.5 py-1 rounded-none shadow-md whitespace-nowrap pointer-events-auto">
                         -22%
                     </span>
                             
             <button type="button" 
-                    onclick="event.preventDefault(); event.stopPropagation(); this.classList.toggle('text-[#B58E3E]'); this.classList.toggle('fill-current'); showToast('ចំណូលចិត្ត', 'លីវ៉ា ឈុតថែរក្សាសម្រស់ប្រណិត (Ritual Collection)');" 
+                    data-wishlist-slug="liva-luxury-travel-collection"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('liva-luxury-travel-collection', 'លីវ៉ា ឈុតថែរក្សាសម្រស់ប្រណិត (Ritual Collection)', this);" 
                     title="ចំណូលចិត្ត" 
-                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-500 hover:text-[#B58E3E] flex items-center justify-center transition-all shadow-md border border-[#EADFC7]/60 pointer-events-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    class="wishlist-toggle-btn w-8 h-8 text-stone-700 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 pointer-events-auto">
+                <svg class="w-5 h-5 drop-shadow-sm pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
             </button>
         </div>
@@ -1719,7 +1731,7 @@
     </a>
 
     <!-- Product Details Content Area with comfortable padding -->
-    <div class="product-card-content p-4 sm:p-5 flex flex-col flex-grow justify-between">
+    <div class="product-card-content pt-3.5 pb-1 px-0 flex flex-col flex-grow justify-between">
         <!-- Title with clamp and clean line height -->
         <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/products/liva-luxury-travel-collection" 
            class="font-bold text-xs sm:text-sm text-stone-900 hover:text-[#B58E3E] transition-colors line-clamp-2 leading-snug min-h-[2.4rem]">
@@ -1742,7 +1754,7 @@
         <div class="mt-4 pt-1">
             <button type="button" 
                     onclick="showToast('កន្ត្រកទំនិញ', 'Added លីវ៉ា ឈុតថែរក្សាសម្រស់ប្រណិត (Ritual Collection)');" 
-                    class="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
+                    class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -1755,20 +1767,20 @@
                             </div>
 
             <!-- Pagination Bar -->
-            <div class="bg-white rounded-3xl p-4 sm:p-5 border border-[#EADFC7] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="bg-transparent rounded-none border-0 shadow-none py-6 px-0 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <span class="text-xs sm:text-sm text-stone-500 font-medium">
                     កំពុងបង្ហាញ ១–១២ នៃ ៤៨ ផលិតផល
                 </span>
 
                 <div class="flex items-center gap-1.5">
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                     </button>
-                    <button class="w-8 h-8 rounded-xl bg-[#B58E3E] text-white font-bold text-xs shadow-sm flex items-center justify-center">1</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">2</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">3</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">4</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
+                    <button class="w-8 h-8 rounded-none bg-[#B58E3E] text-white font-bold text-xs flex items-center justify-center">1</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">2</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">3</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">4</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
                 </div>
@@ -2055,8 +2067,79 @@
             }, 3000);
         }
 
+        // Global Wishlist Persistence & Synchronization (localStorage)
+        function getWishlist() {
+            try {
+                const saved = localStorage.getItem('liva_wishlist');
+                if (saved !== null) {
+                    return JSON.parse(saved);
+                }
+            } catch (e) {}
+            return ['liva-night-cream', 'liva-brightening-serum'];
+        }
+
+        function saveWishlist(items) {
+            try {
+                localStorage.setItem('liva_wishlist', JSON.stringify(items));
+            } catch (e) {}
+            updateWishlistBadges(items.length);
+        }
+
+        function updateWishlistBadges(count) {
+            document.querySelectorAll('.wishlist-badge-count').forEach(el => {
+                el.textContent = count;
+                if (count > 0) {
+                    el.style.display = 'flex';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        function syncWishlistIcons() {
+            const list = getWishlist();
+            updateWishlistBadges(list.length);
+            document.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
+                const slug = btn.getAttribute('data-wishlist-slug');
+                const svg = btn.querySelector('svg');
+                if (!slug || !svg) return;
+                if (list.includes(slug)) {
+                    btn.classList.add('text-[#B58E3E]');
+                    btn.classList.remove('text-stone-700', 'text-stone-500');
+                    svg.classList.add('fill-current');
+                    svg.setAttribute('fill', 'currentColor');
+                    svg.style.fill = 'currentColor';
+                } else {
+                    btn.classList.remove('text-[#B58E3E]');
+                    btn.classList.add('text-stone-700');
+                    svg.classList.remove('fill-current');
+                    svg.setAttribute('fill', 'none');
+                    svg.style.fill = 'none';
+                }
+            });
+        }
+
+        function toggleWishlist(slug, name, btnEl) {
+            let list = getWishlist();
+            const idx = list.indexOf(slug);
+            const isAdded = idx === -1;
+            if (isAdded) {
+                list.push(slug);
+                showToast('ចំណូលចិត្ត', 'Added ' + name + ' to favorites');
+            } else {
+                list.splice(idx, 1);
+                showToast('ចំណូលចិត្ត', 'Removed ' + name + ' from favorites');
+            }
+            saveWishlist(list);
+            syncWishlistIcons();
+            if (typeof window.syncWishlistPage === 'function') {
+                window.syncWishlistPage(isAdded ? null : slug);
+            }
+        }
+
         // Floating contact toggle (Telegram & Facebook)
         document.addEventListener('DOMContentLoaded', function () {
+            syncWishlistIcons();
             const contactBtn = document.getElementById('floating-contact-btn');
             const popup = document.getElementById('contact-popup-menu');
             const iconChat = document.getElementById('contact-icon-chat');
