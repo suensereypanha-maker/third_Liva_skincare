@@ -556,8 +556,9 @@ class FrontendController
         $shipping = 0.00;
         $discount = 5.00;
         $total = 45.75;
+        $allProducts = $this->getProducts();
 
-        return view('frontend.cart.index', compact('cartItems', 'subtotal', 'shipping', 'discount', 'total'));
+        return view('frontend.cart.index', compact('cartItems', 'subtotal', 'shipping', 'discount', 'total', 'allProducts'));
     }
 
     /**

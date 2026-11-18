@@ -82,7 +82,7 @@
                 <div class="relative" id="lang-menu-wrapper">
                     <button type="button" 
                             id="lang-menu-btn"
-                            class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full border border-[#EADFC7] bg-[#FAF7F2] hover:bg-[#F5EFEB] text-stone-800 text-xs font-bold transition-all shrink-0">
+                            class="flex items-center gap-1.5 px-2 py-1.5 bg-transparent border-0 rounded-none text-stone-800 hover:text-[#B58E3E] text-xs font-bold transition-colors shrink-0 focus:outline-none">
                         @if(app()->getLocale() === 'km')
                             <span class="text-sm sm:text-base leading-none">🇰🇭</span>
                             <span class="hidden sm:inline">ខ្មែរ</span>
@@ -96,12 +96,12 @@
                     </button>
 
                     <!-- Language Dropdown -->
-                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-3xl shadow-2xl border border-[#EADFC7] py-2 z-50 animate-in fade-in slide-in-from-top-1">
-                        <div class="px-4 py-1 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-[#F5EFEB] mb-1">
+                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 bg-[#FAF7F2] border-0 rounded-none shadow-lg py-2 z-50 animate-in fade-in slide-in-from-top-1">
+                        <div class="px-3 py-1 text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">
                             {{ __('frontend.header.language') }}
                         </div>
                         <a href="{{ route('lang.switch', 'en') }}" 
-                           class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-stone-700 hover:bg-[#FAF7F2] hover:text-[#B58E3E] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#F5EFEB] text-[#B58E3E]' : '' }}">
+                           class="flex items-center gap-2.5 px-3 py-2 text-xs font-bold transition-colors {{ app()->getLocale() === 'en' ? 'text-[#B58E3E]' : 'text-stone-700 hover:text-[#B58E3E]' }}">
                             <span class="text-base">🇬🇧</span>
                             <span>English</span>
                             @if(app()->getLocale() === 'en')
@@ -109,7 +109,7 @@
                             @endif
                         </a>
                         <a href="{{ route('lang.switch', 'km') }}" 
-                           class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-stone-700 hover:bg-[#FAF7F2] hover:text-[#B58E3E] transition-colors {{ app()->getLocale() === 'km' ? 'bg-[#F5EFEB] text-[#B58E3E]' : '' }}">
+                           class="flex items-center gap-2.5 px-3 py-2 text-xs font-bold transition-colors {{ app()->getLocale() === 'km' ? 'text-[#B58E3E]' : 'text-stone-700 hover:text-[#B58E3E]' }}">
                             <span class="text-base">🇰🇭</span>
                             <span>ភាសាខ្មែរ (Khmer)</span>
                             @if(app()->getLocale() === 'km')
@@ -155,7 +155,7 @@
                     </button>
 
                     <!-- User Auth Dropdown -->
-                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64  p-4 z-50 animate-in fade-in slide-in-from-top-1">
+                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-[#FAF7F2] border-0 rounded-none shadow-lg p-4 z-50 animate-in fade-in slide-in-from-top-1">
                        
 
                         <div class="pt-3 space-y-2">

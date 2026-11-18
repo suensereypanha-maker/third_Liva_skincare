@@ -76,7 +76,7 @@
         <!-- Add to Cart Button -->
         <div class="mt-4 pt-1">
             <button type="button" 
-                    onclick="showToast('{{ __('frontend.header.cart') }}', 'Added {{ $name }}');" 
+                    onclick="if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + 1); } showToast('{{ __('frontend.header.cart') }}', 'Added {{ addslashes($name) }}');" 
                     class="w-full py-2.5 px-3 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-stone-800/10 active:scale-95 transition-all whitespace-nowrap">
                 <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />

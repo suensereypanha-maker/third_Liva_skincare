@@ -179,6 +179,9 @@
             if (typeof window.syncWishlistPage === 'function') {
                 window.syncWishlistPage(isAdded ? null : slug);
             }
+            if (typeof window.syncCartFavorites === 'function') {
+                window.syncCartFavorites();
+            }
         }
 
         // Floating contact toggle (Telegram & Facebook)

@@ -49,7 +49,7 @@
         <div class="lg:col-span-8 space-y-6">
             
             <!-- Delivery Information Form -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-4">
+            <div class=" p-6 sm:p-8  space-y-4">
                 <div class="pb-3 border-b border-[#F5EFEB]">
                     <h3 class="font-extrabold font-brand text-base sm:text-lg text-stone-900 flex items-center gap-2">
                         <span class="w-2 h-5 rounded-full bg-[#B58E3E]"></span>
@@ -104,7 +104,7 @@
             </div>
 
             <!-- Payment Method Form -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-5">
+            <div class="bg-white  p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-5">
                 <h3 class="font-extrabold font-brand text-base sm:text-lg text-stone-900 flex items-center gap-2 pb-3 border-b border-[#F5EFEB]">
                     <span class="w-2 h-5 rounded-full bg-[#B58E3E]"></span>
                     <span>{{ __('frontend.checkout.payment_method') }}</span>
@@ -115,7 +115,7 @@
 
                     <!-- Bank Transfer (KHQR / ABA Bank) - Primary Default -->
                     <label class="block cursor-pointer">
-                        <div class="payment-method-card p-4 rounded-2xl border-2 border-[#B58E3E] bg-[#FAF7F2] transition-all">
+                        <div class="payment-method-card p-4 rounded-2xl transition-all">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-3">
                                     <input type="radio" name="payment_method" value="bank_transfer" checked class="text-[#B58E3E] focus:ring-[#B58E3E]">
@@ -156,7 +156,7 @@
                                 </div>
 
                                 <!-- ABA Bank Details Panel (Active Default) -->
-                                <div id="panel-bank-aba" class="bg-[#FAF7F2] rounded-2xl p-4 sm:p-5 border border-[#EADFC7]">
+                                <div id="panel-bank-aba" class="rounded-2xl p-4 sm:p-5 b">
                                     <div class="flex flex-col md:flex-row items-center gap-6">
                                         
                                         <!-- QR Code Box -->
@@ -329,7 +329,7 @@
 
         <!-- Right: Order Summary Sidebar -->
         <div class="lg:col-span-4">
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-6">
+            <div class="bg-white  p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-6">
                 
                 <h3 class="font-extrabold font-brand text-base sm:text-lg text-stone-900 pb-3 border-b border-[#F5EFEB]">
                     {{ __('frontend.cart.order_summary') }}
@@ -374,7 +374,7 @@
 
                 <!-- Place Order Button -->
                 <a href="{{ route('order.success') }}" 
-                   class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-extrabold text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2">
+                   class="w-full py-3.5 px-6  bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-extrabold text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2">
                     <span>{{ __('frontend.checkout.place_order') }}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>

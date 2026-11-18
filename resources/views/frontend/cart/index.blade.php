@@ -34,7 +34,7 @@
                     $isKm = app()->getLocale() === 'km';
                     $itemName = $isKm && !empty($item['name_km']) ? $item['name_km'] : $item['name'];
                 @endphp
-                <div class="cart-item-row bg-white rounded-3xl p-4 sm:p-6 border border-[#EADFC7] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300"
+                <div class="cart-item-row   p-4 sm:p-6  flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300"
                      data-price="{{ $item['price'] }}">
                     
                     <!-- Product Info & Thumb -->
@@ -86,15 +86,29 @@
                             ${{ number_format($item['price'] * $item['quantity'], 2) }}
                         </span>
 
-                        <!-- Trash Button -->
-                        <button type="button" 
-                                onclick="removeCartItemRow(this)"
-                                title="Remove item" 
-                                class="w-8 h-8 rounded-xl bg-[#FAF7F2] text-stone-400 hover:text-red-600 hover:bg-red-50 flex items-center justify-center transition-colors border border-[#EADFC7]/60 cursor-pointer">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                        </button>
+                        <!-- Actions: Favorite & Trash -->
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <!-- Favorite / Wishlist Button -->
+                            <button type="button" 
+                                    data-wishlist-slug="{{ $item['slug'] ?? 'liva-night-cream' }}"
+                                    onclick="toggleWishlist('{{ $item['slug'] ?? 'liva-night-cream' }}', '{{ addslashes($itemName) }}', this);"
+                                    title="{{ __('frontend.header.wishlist') }}" 
+                                    class="wishlist-toggle-btn w-8 h-8 text-stone-400 hover:text-[#B58E3E] flex items-center justify-center transition-all hover:scale-110 cursor-pointer">
+                                <svg class="w-5 h-5 pointer-events-none drop-shadow-xs" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+
+                            <!-- Trash Button -->
+                            <button type="button" 
+                                    onclick="removeCartItemRow(this)"
+                                    title="Remove item" 
+                                    class="w-8 h-8 text-stone-400 hover:text-red-600 flex items-center justify-center transition-colors cursor-pointer">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -112,7 +126,7 @@
 
         <!-- Right: Order Summary Card -->
         <div class="lg:col-span-4">
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-6">
+            <div class="bg-white  p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-6">
                 
                 <h3 class="font-extrabold font-brand text-base sm:text-lg text-stone-900 pb-3 border-b border-[#F5EFEB]">
                     {{ __('frontend.cart.order_summary') }}
@@ -162,7 +176,7 @@
 
                 <!-- Checkout Button -->
                 <a href="{{ route('checkout.index') }}" 
-                   class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-extrabold text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2">
+                   class="w-full py-3.5 px-6  bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-extrabold text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2">
                     <span>{{ __('frontend.cart.checkout') }}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
@@ -177,6 +191,35 @@
         </div>
 
     </div>
+
+    <!-- From Your Favorites Section -->
+    @if(!empty($allProducts))
+        <div id="cart-favorites-section" class="mt-12 pt-8 border-t border-[#EADFC7] space-y-5" style="display: none;">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-black font-brand text-stone-900 tracking-tight flex items-center gap-2.5">
+                        <span class="w-2.5 h-6 rounded-none bg-[#B58E3E]"></span>
+                        <span>{{ app()->getLocale() === 'km' ? 'ទំនិញដែលអ្នកចូលចិត្ត' : 'From Your Favorites' }}</span>
+                    </h2>
+                    <p class="text-xs text-stone-500 mt-1">
+                        {{ app()->getLocale() === 'km' ? 'ផលិតផលដែលអ្នកបានរក្សាទុកក្នុងបញ្ជីចូលចិត្ត' : 'Items you have saved in your personal wishlist' }}
+                    </p>
+                </div>
+                <a href="{{ route('wishlist.index') }}" class="text-xs sm:text-sm font-bold text-[#B58E3E] hover:text-[#997528] transition-colors flex items-center gap-1">
+                    <span>{{ __('frontend.header.wishlist') }}</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6" id="cart-favorites-grid">
+                @foreach($allProducts as $p)
+                    <div class="cart-fav-card" data-fav-slug="{{ $p['slug'] }}" style="display: none;">
+                        @include('frontend.components.product-card', ['product' => $p])
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
 
 </div>
 
@@ -303,6 +346,34 @@
             showToast('Invalid Coupon', 'Code not recognized. Try LIVAGLOW');
         }
     }
+
+    window.syncCartFavorites = function() {
+        if (typeof getWishlist !== 'function') return;
+        const list = getWishlist();
+        const section = document.getElementById('cart-favorites-section');
+        let shownCount = 0;
+        document.querySelectorAll('.cart-fav-card').forEach(card => {
+            const slug = card.getAttribute('data-fav-slug');
+            if (list.includes(slug)) {
+                card.style.display = 'block';
+                shownCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        if (section) {
+            section.style.display = shownCount > 0 ? 'block' : 'none';
+        }
+        if (typeof syncWishlistIcons === 'function') {
+            syncWishlistIcons();
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof window.syncCartFavorites === 'function') {
+            window.syncCartFavorites();
+        }
+    });
 </script>
 @endpush
 @endsection

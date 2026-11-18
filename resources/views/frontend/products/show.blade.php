@@ -190,10 +190,10 @@
                 <div class="pt-2 space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                         <!-- Stepper -->
-                        <div class="flex items-center justify-center border border-[#EADFC7] rounded-2xl bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
+                        <div class="flex items-center justify-center border border-[#EADFC7] bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
                             <button type="button" 
                                     onclick="let q = document.getElementById('product-qty'); if(parseInt(q.value) > 1) q.value = parseInt(q.value) - 1;"
-                                    class="w-9 h-9 rounded-xl bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9  bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
                                 -
                             </button>
                             <input type="number" 
@@ -204,7 +204,7 @@
                                    class="w-14 text-center bg-transparent border-0 font-bold text-sm text-stone-800 focus:outline-none focus:ring-0">
                             <button type="button" 
                                     onclick="let q = document.getElementById('product-qty'); q.value = parseInt(q.value) + 1;"
-                                    class="w-9 h-9 rounded-xl bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9  bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
                                 +
                             </button>
                         </div>
@@ -212,7 +212,7 @@
                         <!-- Add to Cart (Brushed Luxury Gold) -->
                         <button type="button" 
                                 onclick="showToast('{{ __('frontend.header.cart') }}', 'Added {{ $name }}');"
-                                class="w-full sm:flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-bold text-xs sm:text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                                class="w-full sm:flex-1 py-3.5 px-6  bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-bold text-xs sm:text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
                             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
