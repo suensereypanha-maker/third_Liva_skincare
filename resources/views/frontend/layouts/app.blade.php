@@ -111,8 +111,79 @@
             }, 3000);
         }
 
+        // Global Wishlist Persistence & Synchronization (localStorage)
+        function getWishlist() {
+            try {
+                const saved = localStorage.getItem('liva_wishlist');
+                if (saved !== null) {
+                    return JSON.parse(saved);
+                }
+            } catch (e) {}
+            return ['liva-night-cream', 'liva-brightening-serum'];
+        }
+
+        function saveWishlist(items) {
+            try {
+                localStorage.setItem('liva_wishlist', JSON.stringify(items));
+            } catch (e) {}
+            updateWishlistBadges(items.length);
+        }
+
+        function updateWishlistBadges(count) {
+            document.querySelectorAll('.wishlist-badge-count').forEach(el => {
+                el.textContent = count;
+                if (count > 0) {
+                    el.style.display = 'flex';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+        }
+
+        function syncWishlistIcons() {
+            const list = getWishlist();
+            updateWishlistBadges(list.length);
+            document.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
+                const slug = btn.getAttribute('data-wishlist-slug');
+                const svg = btn.querySelector('svg');
+                if (!slug || !svg) return;
+                if (list.includes(slug)) {
+                    btn.classList.add('text-[#B58E3E]');
+                    btn.classList.remove('text-stone-700', 'text-stone-500');
+                    svg.classList.add('fill-current');
+                    svg.setAttribute('fill', 'currentColor');
+                    svg.style.fill = 'currentColor';
+                } else {
+                    btn.classList.remove('text-[#B58E3E]');
+                    btn.classList.add('text-stone-700');
+                    svg.classList.remove('fill-current');
+                    svg.setAttribute('fill', 'none');
+                    svg.style.fill = 'none';
+                }
+            });
+        }
+
+        function toggleWishlist(slug, name, btnEl) {
+            let list = getWishlist();
+            const idx = list.indexOf(slug);
+            const isAdded = idx === -1;
+            if (isAdded) {
+                list.push(slug);
+                showToast('{{ __('frontend.header.wishlist') }}', 'Added ' + name + ' to favorites');
+            } else {
+                list.splice(idx, 1);
+                showToast('{{ __('frontend.header.wishlist') }}', 'Removed ' + name + ' from favorites');
+            }
+            saveWishlist(list);
+            syncWishlistIcons();
+            if (typeof window.syncWishlistPage === 'function') {
+                window.syncWishlistPage(isAdded ? null : slug);
+            }
+        }
+
         // Floating contact toggle (Telegram & Facebook)
         document.addEventListener('DOMContentLoaded', function () {
+            syncWishlistIcons();
             const contactBtn = document.getElementById('floating-contact-btn');
             const popup = document.getElementById('contact-popup-menu');
             const iconChat = document.getElementById('contact-icon-chat');

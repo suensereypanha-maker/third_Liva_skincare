@@ -126,7 +126,7 @@
                     <svg class="w-5 h-5" fill="{{ request()->routeIs('wishlist.index') ? 'currentColor' : 'none' }}" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span class="absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
+                    <span class="wishlist-badge-count absolute top-0.5 right-0.5 w-4 h-4 bg-[#B58E3E] text-white text-[10px] font-black rounded-full flex items-center justify-center">
                         2
                     </span>
                 </a>
@@ -339,7 +339,7 @@
     <!-- Wishlist / Favorites -->
     <a href="{{ route('wishlist.index') }}" class="relative flex flex-col items-center gap-0.5 {{ request()->routeIs('wishlist.index') ? 'text-[#B58E3E] font-bold' : 'text-stone-500 hover:text-[#B58E3E]' }}">
         <svg class="w-5 h-5" fill="{{ request()->routeIs('wishlist.index') ? 'currentColor' : 'none' }}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        <span class="absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
+        <span class="wishlist-badge-count absolute -top-1 right-2 w-3.5 h-3.5 bg-[#B58E3E] text-white text-[8px] font-black rounded-full flex items-center justify-center">2</span>
         <span class="text-[9px]">{{ __('frontend.header.wishlist') }}</span>
     </a>
 

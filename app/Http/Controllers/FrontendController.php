@@ -680,7 +680,7 @@ class FrontendController
             return in_array($p['slug'], ['liva-night-cream', 'liva-brightening-serum']);
         }));
 
-        return view('frontend.wishlist.index', compact('wishlistProducts'));
+        return view('frontend.wishlist.index', compact('wishlistProducts', 'allProducts'));
     }
 
     /**

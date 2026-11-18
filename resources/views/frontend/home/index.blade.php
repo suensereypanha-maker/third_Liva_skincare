@@ -350,20 +350,20 @@
             </div>
 
             <!-- Pagination Bar -->
-            <div class="bg-white rounded-3xl p-4 sm:p-5 border border-[#EADFC7] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="bg-transparent rounded-none border-0 shadow-none py-6 px-0 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <span class="text-xs sm:text-sm text-stone-500 font-medium">
                     {{ __('frontend.catalog.showing') }}
                 </span>
 
                 <div class="flex items-center gap-1.5">
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                     </button>
-                    <button class="w-8 h-8 rounded-xl bg-[#B58E3E] text-white font-bold text-xs shadow-sm flex items-center justify-center">1</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">2</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">3</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">4</button>
-                    <button class="w-8 h-8 rounded-xl border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
+                    <button class="w-8 h-8 rounded-none bg-[#B58E3E] text-white font-bold text-xs flex items-center justify-center">1</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">2</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">3</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-700 hover:bg-[#FAF7F2] font-bold text-xs flex items-center justify-center">4</button>
+                    <button class="w-8 h-8 rounded-none border border-[#EADFC7] text-stone-500 hover:bg-[#FAF7F2] flex items-center justify-center transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
                 </div>
