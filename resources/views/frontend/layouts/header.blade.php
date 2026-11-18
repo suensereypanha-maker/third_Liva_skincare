@@ -162,7 +162,7 @@
                     </button>
 
                     <!-- User Auth Dropdown -->
-                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-3xl shadow-2xl border border-[#EADFC7] p-4 z-50 animate-in fade-in slide-in-from-top-1">
+                    <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64  p-4 z-50 animate-in fade-in slide-in-from-top-1">
                         <div class="flex items-center gap-3 pb-3 border-b border-[#F5EFEB]">
                             <div class="w-10 h-10 rounded-2xl bg-[#F5EFEB] border border-[#EADFC7] text-[#B58E3E] flex items-center justify-center text-lg shrink-0">
                                 👑
