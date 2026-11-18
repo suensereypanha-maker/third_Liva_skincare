@@ -134,7 +134,7 @@
                 <!-- Categories Tree -->
                 <div class="space-y-1.5" id="categories-tree">
                     
-                    <!-- All Products Link -->
+                  
                     @php
                         $isAll = empty($currentCategory) || $currentCategory === 'all';
                     @endphp
