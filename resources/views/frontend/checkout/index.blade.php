@@ -50,14 +50,11 @@
             
             <!-- Delivery Information Form -->
             <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EADFC7] shadow-sm space-y-4">
-                <div class="flex items-center justify-between pb-3 border-b border-[#F5EFEB]">
+                <div class="pb-3 border-b border-[#F5EFEB]">
                     <h3 class="font-extrabold font-brand text-base sm:text-lg text-stone-900 flex items-center gap-2">
                         <span class="w-2 h-5 rounded-full bg-[#B58E3E]"></span>
                         <span>{{ __('frontend.checkout.shipping_details') }}</span>
                     </h3>
-                    <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                        {{ app()->getLocale() === 'km' ? 'ដឹកជញ្ជូនរហ័ស' : 'Express Delivery' }}
-                    </span>
                 </div>
 
                 <!-- Phone Number -->
