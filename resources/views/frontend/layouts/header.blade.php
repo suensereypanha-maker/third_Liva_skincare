@@ -163,15 +163,7 @@
 
                     <!-- User Auth Dropdown -->
                     <div id="user-auth-dropdown" class="hidden absolute right-0 mt-2 w-64  p-4 z-50 animate-in fade-in slide-in-from-top-1">
-                        <div class="flex items-center gap-3 pb-3 border-b border-[#F5EFEB]">
-                            <div class="w-10 h-10 rounded-2xl bg-[#F5EFEB] border border-[#EADFC7] text-[#B58E3E] flex items-center justify-center text-lg shrink-0">
-                                👑
-                            </div>
-                            <div>
-                                <h4 class="font-extrabold text-stone-900 text-xs font-brand">{{ __('frontend.auth.welcome_title') }}</h4>
-                                <p class="text-[10px] text-stone-500 leading-tight mt-0.5">{{ __('frontend.auth.welcome_desc') }}</p>
-                            </div>
-                        </div>
+                       
 
                         <div class="pt-3 space-y-2">
                             <a href="{{ route('login') }}" 
@@ -187,16 +179,7 @@
                             </a>
                         </div>
 
-                        <div class="mt-3 pt-2.5 border-t border-[#F5EFEB] flex items-center justify-between text-[11px]">
-                            <a href="{{ route('wishlist.index') }}" class="text-stone-500 hover:text-[#B58E3E] font-medium flex items-center gap-1">
-                                <span>❤️</span>
-                                <span>{{ __('frontend.header.wishlist') }}</span>
-                            </a>
-                            <a href="{{ route('account.dashboard') }}" class="text-stone-500 hover:text-[#B58E3E] font-medium flex items-center gap-1">
-                                <span>👤</span>
-                                <span>Dashboard</span>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
 

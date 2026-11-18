@@ -11,9 +11,7 @@
 
         <!-- Brand Icon / Header -->
         <div class="text-center mb-8">
-            <div class="w-14 h-14 rounded-2xl bg-[#F5EFEB] border border-[#EADFC7] text-[#B58E3E] flex items-center justify-center mx-auto mb-3 shadow-xs">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
-            </div>
+       
             <h1 class="text-2xl font-black font-brand text-stone-900">
                 {{ __('frontend.auth.register_title') }}
             </h1>
