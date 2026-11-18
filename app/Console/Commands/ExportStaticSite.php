@@ -101,9 +101,40 @@ class ExportStaticSite extends Command
             File::copy($outDir.'/index.html', $outDir.'/404.html');
         }
 
+        // Also sync to root and docs/ so GitHub Pages works automatically from any configuration (main root, main /docs, or gh-pages)
+        $this->syncToRootAndDocs($outDir);
+
         $this->info('Static export completed successfully!');
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Sync static files to repository root and docs/ directory for foolproof GitHub Pages support.
+     */
+    protected function syncToRootAndDocs(string $outDir): void
+    {
+        $docsDir = base_path('docs');
+        if (! File::exists($docsDir)) {
+            File::makeDirectory($docsDir, 0755, true);
+        }
+        File::copyDirectory($outDir, $docsDir);
+
+        $items = File::allFiles($outDir);
+        foreach ($items as $file) {
+            $relPath = $file->getRelativePathname();
+            $dest = base_path($relPath);
+            $parent = dirname($dest);
+            if (! File::exists($parent)) {
+                File::makeDirectory($parent, 0755, true);
+            }
+            File::copy($file->getRealPath(), $dest);
+        }
+
+        if (File::exists($outDir.'/.nojekyll')) {
+            File::put(base_path('.nojekyll'), '');
+            File::put($docsDir.'/.nojekyll', '');
+        }
     }
 
     /**
