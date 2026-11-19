@@ -113,7 +113,7 @@
                 </p>
                 <div class="grid grid-cols-2 gap-2.5 pt-1">
                     <!-- ABA KHQR Box -->
-                    <div class="bg-white/5 hover:bg-white/10 border border-[#C5A059]/30 hover:border-[#C5A059] rounded-2xl p-2 flex flex-col items-center transition-all cursor-pointer shadow-xs group">
+                    <div class="bg-white/5 hover:bg-white/10 hover:border-[#C5A059] rounded-2xl p-2 flex flex-col items-center transition-all cursor-pointer shadow-xs group">
                         <div class="flex items-center gap-1 mb-1.5">
                             <img src="{{ asset('img/payments/aba.png') }}" alt="ABA Bank" class="w-3.5 h-3.5 object-contain rounded-xs">
                             <span class="text-[10px] font-black text-white tracking-wider">ABA</span>
@@ -123,18 +123,17 @@
                         </div>
                         <span class="text-[9px] text-[#C5A059] font-bold mt-1.5">KHQR</span>
                     </div>
-
-                    <!-- Canadia KHQR Box -->
-                    <div class="bg-white/5 hover:bg-white/10 border border-[#C5A059]/30 hover:border-[#C5A059] rounded-2xl p-2 flex flex-col items-center transition-all cursor-pointer shadow-xs group">
+                        <div class="bg-white/5 hover:bg-white/10 hover:border-[#C5A059] rounded-2xl p-2 flex flex-col items-center transition-all cursor-pointer shadow-xs group">
                         <div class="flex items-center gap-1 mb-1.5">
-                            <img src="{{ asset('img/payments/canadia-logo.png') }}" alt="Canadia Bank" class="w-3.5 h-3.5 object-contain rounded-xs">
-                            <span class="text-[10px] font-black text-white tracking-wider">CANADIA</span>
+                            <span class="text-[10px] font-black text-white tracking-wider">KH QR</span>
                         </div>
                         <div class="bg-white p-1 rounded-lg">
-                            <img src="{{ asset('img/payments/canadia-khqr.png') }}" alt="Canadia KHQR" class="w-14 h-14 object-contain">
+                            <img src="{{ asset('img/payments/aba-khqr.png') }}" alt="ABA KHQR" class="w-14 h-14 object-contain">
                         </div>
-                        <span class="text-[9px] text-[#C5A059] font-bold mt-1.5">Bakong</span>
+                        <span class="text-[9px] text-[#C5A059] font-bold mt-1.5">KHQR</span>
                     </div>
+
+                   
                 </div>
             </div>
 
