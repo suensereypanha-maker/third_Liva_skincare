@@ -1,10 +1,10 @@
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EADFC7] shadow-xs transition-all duration-200">
     <!-- Announcement Micro Bar (Luxury Gold & Deep Espresso) -->
     <div class="bg-[#1C1917] text-[#EADFC7] text-[11px] sm:text-xs font-medium py-1.5 px-4 text-center tracking-wider flex items-center justify-center gap-2 border-b border-[#2E2822]">
-        <span class="text-[#C5A059]">✦</span>
-        <span class="truncate">
+
+        <marquee  direction="left" scrollamount="5" class="truncate">
             {{ app()->getLocale() === 'km' ? 'ដឹកជញ្ជូនឥតគិតថ្លៃសម្រាប់ការកុម្ម៉ង់ចាប់ពី $25 ឡើងទៅ! កូដបញ្ចុះតម្លៃ VIP៖ LIVAGLOW' : 'Complimentary shipping on orders over $25! Use VIP code: LIVAGLOW' }}
-        </span>
+        </marquee>
     </div>
 
     <!-- Main Navigation Bar -->
