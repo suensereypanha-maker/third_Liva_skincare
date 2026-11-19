@@ -55,6 +55,12 @@ jobs:
       - name: Export Static Site for GitHub Pages
         run: php artisan app:export-static-site
 
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
@@ -65,11 +71,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v4
-
-      - name: Deploy to gh-pages branch (backup)
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
 
