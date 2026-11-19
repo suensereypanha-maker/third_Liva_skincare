@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - PanhaDev
   workflow_dispatch:
 
 permissions:
