@@ -1,0 +1,25 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "/*.html": true,
+    "/.nojekyll": true,
+    "/about": true,
+    "/cart": true,
+    "/checkout": true,
+    "/contact": true,
+    "/dashboard": true,
+    "/km": true,
+    "/login": true,
+    "/order-success": true,
+    "/products": true,
+    "/register": true,
+    "/wishlist": true,
+    "/docs": true,
+    "/dist": true
+  }
+}
