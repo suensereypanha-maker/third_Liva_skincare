@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EADFC7] shadow-xs transition-all duration-200">
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md   transition-all duration-200">
     <!-- Announcement Micro Bar (Luxury Gold & Deep Espresso) -->
     <div class="bg-[#1C1917] text-[#EADFC7] text-[11px] sm:text-xs font-medium py-1.5 px-4 text-center tracking-wider flex items-center justify-center gap-2 border-b border-[#2E2822]">
 

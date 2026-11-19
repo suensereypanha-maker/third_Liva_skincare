@@ -30,7 +30,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- Contact Form -->
-        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-[#EADFC7] shadow-sm">
+        <div class="lg:col-span-7 rounded-3xl p-6 sm:p-10 ">
             <h2 class="text-xl sm:text-2xl font-black font-brand text-stone-900 mb-1">
                 {{ __('frontend.contact.form_title') }}
             </h2>
@@ -93,7 +93,7 @@
         <!-- Right Side: Luxury Assurance & Map -->
         <div class="lg:col-span-5 space-y-6">
             
-            <div class="bg-gradient-to-br from-[#FAF7F2] to-[#F5EFEB] rounded-3xl p-6 sm:p-8 border border-[#EADFC7]">
+            <div class="bg-gradient-to-br  p-6 sm:p-8 ">
                 <h3 class="font-extrabold font-brand text-stone-900 text-lg mb-3">
                     Concierge Hours & Direct Assistance
                 </h3>
@@ -123,7 +123,7 @@
             </div>
 
             <!-- Boutique Image / Map Card -->
-            <div class="rounded-3xl overflow-hidden border border-[#EADFC7] bg-white p-5 shadow-sm space-y-3">
+            <div class=" overflow-hidden  p-5  space-y-3">
                 <div class="aspect-16/9 rounded-2xl bg-[#FAF7F2] overflow-hidden relative">
                     <img src="{{ asset('img/hero.png') }}" alt="Liva Flagship Store" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-stone-950/40 flex items-center justify-center">

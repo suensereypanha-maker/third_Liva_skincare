@@ -101,7 +101,14 @@ class ExportStaticSite extends Command
             File::copy($outDir.'/index.html', $outDir.'/404.html');
         }
 
-        $this->info('Static export completed successfully to dist!');
+        // Sync to docs/ and root for GitHub Pages support
+        $docsDir = base_path('docs');
+        $this->copyDirectory($outDir, $docsDir);
+
+        // Copy key html and folders to root for direct root serving
+        File::copyDirectory($outDir, base_path());
+
+        $this->info('Static export completed successfully to dist, docs, and root!');
 
         return self::SUCCESS;
     }

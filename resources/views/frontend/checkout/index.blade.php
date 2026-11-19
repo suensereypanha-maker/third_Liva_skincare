@@ -156,13 +156,13 @@
                                 </div>
 
                                 <!-- ABA Bank Details Panel (Active Default) -->
-                                <div id="panel-bank-aba" class="rounded-2xl p-4 sm:p-5 b">
+                                <div id="panel-bank-aba" class="rounded-2xl p-4 sm:p-5 bg-[#FAF7F2] border border-[#EADFC7]">
                                     <div class="flex flex-col md:flex-row items-center gap-6">
                                         
                                         <!-- QR Code Box -->
                                         <div class="flex flex-col items-center shrink-0">
-                                            <div class="relative p-3 bg-white rounded-2xl border-2 border-[#EADFC7] shadow-sm flex flex-col items-center">
-                                                <div class="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-stone-100 w-full justify-center">
+                                            <div class="relative p-2 flex flex-col items-center">
+                                                <div class="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-[#EADFC7]/60 w-full justify-center">
                                                     <img src="{{ asset('img/payments/aba.png') }}" alt="ABA Bank" class="w-4 h-4 object-contain rounded-xs">
                                                     <span class="text-[11px] font-black text-[#015F7A] tracking-wider">ABA BANK KHQR</span>
                                                 </div>
@@ -242,8 +242,8 @@
                                         
                                         <!-- QR Code Box -->
                                         <div class="flex flex-col items-center shrink-0">
-                                            <div class="relative p-3 bg-white rounded-2xl border-2 border-[#EADFC7] shadow-sm flex flex-col items-center">
-                                                <div class="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-stone-100 w-full justify-center">
+                                            <div class="relative p-2 flex flex-col items-center">
+                                                <div class="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-[#EADFC7]/60 w-full justify-center">
                                                     <img src="{{ asset('img/payments/canadia-logo.png') }}" alt="Canadia Bank" class="w-4 h-4 object-contain">
                                                     <span class="text-[11px] font-black text-red-600 tracking-wider">CANADIA BANK KHQR</span>
                                                 </div>

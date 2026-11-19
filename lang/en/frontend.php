@@ -280,6 +280,8 @@ return [
         'newsletter_desc' => 'Subscribe to receive invitations, VIP previews, and private skincare consultations.',
         'email_placeholder' => 'Enter your email address',
         'subscribe' => 'Join VIP',
+        'support_khqr' => 'We Support KHQR',
+        'support_khqr_desc' => 'Scan to pay with any mobile banking app in Cambodia.',
         'shipping_policy' => 'Shipping & Delivery',
         'return_policy' => 'Returns & Exchange',
         'faq' => 'Frequently Asked Questions',
