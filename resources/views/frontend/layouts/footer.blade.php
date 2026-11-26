@@ -12,17 +12,12 @@
             
             <!-- Brand Column -->
             <div class="space-y-4">
-                <div class="flex items-center gap-2.5">
-                    <div class="h-10 w-10 rounded-xl overflow-hidden border border-[#C5A059]/40 bg-white p-0.5">
-                        <img src="{{ asset('img/liva/brand-logo.jpg') }}" alt="LIVA" class="h-full w-full object-cover rounded-lg">
-                    </div>
-                    <div>
-                        <span class="text-2xl font-black font-brand tracking-wider text-white">LIVA</span>
-                        <span class="text-[10px] uppercase tracking-widest text-[#C5A059] ml-1.5 font-bold">
-                            {{ __('frontend.brand.subtitle') }}
-                        </span>
-                    </div>
-                </div>
+                {{-- <div class="flex items-center gap-3">
+                    <img src="{{ asset('img/liva/brand-logo.webp') }}" alt="LIVA" class="h-11 w-auto object-contain shrink-0">
+                    <span class="text-[10px] uppercase tracking-widest text-[#C5A059] border-l border-[#C5A059]/30 pl-3 font-bold">
+                        {{ __('frontend.brand.subtitle') }}
+                    </span>
+                </div> --}}
 
                 <p class="text-[#EADFC7]/75 text-xs sm:text-sm max-w-sm leading-relaxed">
                     {{ __('frontend.brand.tagline') }}

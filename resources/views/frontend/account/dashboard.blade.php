@@ -156,7 +156,7 @@
                     </p>
                 </div>
                 <div class="relative z-10 flex-shrink-0">
-                    <img src="{{ asset('img/liva/brand-logo.jpg') }}" alt="LIVA" class="w-20 sm:w-24 h-auto rounded-2xl shadow-lg border border-[#C5A059]/40 object-cover">
+                    <img src="{{ asset('img/liva/brand-logo.webp') }}" alt="LIVA" class="w-20 sm:w-24 h-auto object-contain">
                 </div>
             </div>
 
