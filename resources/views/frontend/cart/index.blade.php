@@ -66,17 +66,17 @@
                         <div class="flex items-center border border-[#EADFC7] rounded-none bg-[#FAF7F2] p-0.5">
                             <button type="button" 
                                     onclick="changeCartQty(this, -1)"
-                                    class="w-7 h-7 rounded-none bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
+                                    class="w-7 h-7 rounded-none  text-stone-600  flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
                                 -
                             </button>
                             <input type="number" 
                                    value="{{ $item['quantity'] }}" 
                                    min="1" 
                                    readonly 
-                                   class="cart-item-qty w-10 text-center bg-transparent border-0 font-bold text-xs text-stone-800 focus:outline-none focus:ring-0">
+                                   class="cart-item-qty no-spinner w-10 text-center bg-transparent border-0 font-bold text-xs text-stone-800 focus:outline-none focus:ring-0 p-0">
                             <button type="button" 
                                     onclick="changeCartQty(this, 1)"
-                                    class="w-7 h-7 rounded-none bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
+                                    class="w-7 h-7 rounded-none  text-stone-600  flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
                                 +
                             </button>
                         </div>

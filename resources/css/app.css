@@ -57,3 +57,14 @@ html[lang="km"] h4 {
 ::-webkit-scrollbar-thumb:hover {
     background: #B58E3E;
 }
+
+/* Hide native number input spinners */
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"].no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"].no-spinner {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}

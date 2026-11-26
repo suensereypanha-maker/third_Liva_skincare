@@ -211,17 +211,17 @@
                         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                             <!-- Stepper -->
                             <div
-                                class="flex items-center justify-between sm:justify-center  bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
+                                class="flex items-center justify-between sm:justify-center border border-[#EADFC7] bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
                                 <button type="button"
                                     onclick="let q = document.getElementById('product-qty'); if(parseInt(q.value) > 1) q.value = parseInt(q.value) - 1;"
-                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm cursor-pointer active:scale-95 transition-all">
                                     -
                                 </button>
                                 <input type="number" id="product-qty" value="1" min="1" readonly
-                                    class="w-14 text-center bg-transparent border-0 font-bold text-sm text-stone-800 focus:outline-none focus:ring-0">
+                                    class="no-spinner w-12 text-center bg-transparent border-0 font-bold text-sm text-stone-800 focus:outline-none focus:ring-0 p-0">
                                 <button type="button"
                                     onclick="let q = document.getElementById('product-qty'); q.value = parseInt(q.value) + 1;"
-                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm cursor-pointer active:scale-95 transition-all">
                                     +
                                 </button>
                             </div>
