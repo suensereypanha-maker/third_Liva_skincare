@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles & Scripts via Vite -->
-    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-DLCzhMYH.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-DLCzhMYH.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
+    <link rel="preload" as="style" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-DQKcHymp.css" /><link rel="modulepreload" as="script" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js" /><link rel="stylesheet" href="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-DQKcHymp.css" /><script type="module" src="https://suensereypanha-maker.github.io/third_Liva_skincare/build/assets/app-BvRk9kiK.js"></script>
     <style>
         body {
             font-family: &#039;Plus Jakarta Sans&#039;, sans-serif;
@@ -193,31 +193,32 @@
             </div>
         </div>
     </div>
+</header>
 
-    <!-- Mobile Drawer Modal & Overlay -->
-    <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-50 hidden transition-opacity duration-300">
-        <div id="mobile-drawer-content" class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col z-50 transform -translate-x-full transition-transform duration-300 ease-out">
+<!-- Mobile Drawer Modal & Overlay (Moved outside header to avoid backdrop-filter clipping) -->
+<div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity duration-300">
+    <div id="mobile-drawer-content" class="fixed inset-y-0 left-0 w-4/5 max-w-sm h-full bg-white shadow-2xl flex flex-col z-50 transform -translate-x-full transition-transform duration-300 ease-out">
             
             <!-- Drawer Header -->
-            <div class="p-4 border-b border-[#EADFC7] flex items-center justify-between bg-[#FAF7F2]">
+            <div class="p-4 border-b border-[#EADFC7] flex items-center justify-between bg-[#FAF7F2] shrink-0">
                 <div class="flex items-center gap-2.5">
-                    <div class="h-9 w-9 rounded-xl overflow-hidden border border-[#EADFC7] bg-white">
+                    <div class="h-9 w-9 rounded-none overflow-hidden border border-[#EADFC7] bg-white">
                         <img src="https://suensereypanha-maker.github.io/third_Liva_skincare/img/liva/brand-logo.jpg" alt="LIVA" class="h-full w-full object-cover">
                     </div>
                     <span class="font-black font-brand text-xl tracking-wider text-stone-900">LIVA</span>
                 </div>
-                <button type="button" id="mobile-drawer-close-btn" class="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-[#F5EFEB]">
+                <button type="button" id="mobile-drawer-close-btn" class="p-2 text-stone-400 hover:text-stone-700 hover:bg-[#F5EFEB] transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
 
             <!-- Drawer Search -->
-            <div class="p-4 border-b border-[#EADFC7]">
+            <div class="p-4 border-b border-[#EADFC7] shrink-0">
                 <form action="https://suensereypanha-maker.github.io/third_Liva_skincare/products" method="GET" class="relative">
                     <input type="text" 
                            name="q" 
                            placeholder="Search products, ingredients..." 
-                           class="w-full bg-[#FAF7F2] border border-[#EADFC7] rounded-full pl-9 pr-4 py-2 text-xs text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#B58E3E]">
+                           class="w-full bg-[#FAF7F2] border border-[#EADFC7] rounded-none pl-9 pr-4 py-2.5 text-xs text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#B58E3E]">
                     <svg class="w-4 h-4 text-[#B58E3E] absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </form>
             </div>
@@ -233,7 +234,7 @@
                 </a>
 
                 <!-- Skincare Accordion -->
-                <div class="border border-[#EADFC7] rounded-2xl overflow-hidden">
+                <div class="border border-[#EADFC7] rounded-none overflow-hidden">
                     <button type="button" 
                             onclick="document.getElementById('mobile-sub-skincare').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');"
                             class="w-full flex items-center justify-between px-4 py-2.5 text-sm font-bold text-stone-800 hover:bg-[#F5EFEB]">
@@ -241,29 +242,29 @@
                         <svg class="w-4 h-4 text-stone-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-sub-skincare" class="hidden bg-[#FAF7F2] px-3 py-2 space-y-1 text-xs">
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=skincare" class="block px-3 py-1.5 rounded-xl font-bold text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=skincare" class="block px-3 py-1.5 rounded-none font-bold text-[#B58E3E]">
                             All Skincare (18)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=cleanser" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=cleanser" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Cleanser (6)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=toner" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=toner" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Toner (6)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=serum" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=serum" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Serum (7)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=cream" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=cream" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Cream (8)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=sunscreen" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=sunscreen" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Sunscreen (5)
                         </a>
                     </div>
                 </div>
 
                 <!-- Body Care Accordion -->
-                <div class="border border-[#EADFC7] rounded-2xl overflow-hidden">
+                <div class="border border-[#EADFC7] rounded-none overflow-hidden">
                     <button type="button" 
                             onclick="document.getElementById('mobile-sub-bodycare').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');"
                             class="w-full flex items-center justify-between px-4 py-2.5 text-sm font-bold text-stone-800 hover:bg-[#F5EFEB]">
@@ -271,62 +272,62 @@
                         <svg class="w-4 h-4 text-stone-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-sub-bodycare" class="hidden bg-[#FAF7F2] px-3 py-2 space-y-1 text-xs">
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_care" class="block px-3 py-1.5 rounded-xl font-bold text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_care" class="block px-3 py-1.5 rounded-none font-bold text-[#B58E3E]">
                             All Body Care (8)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_lotion" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_lotion" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Body Lotion (4)
                         </a>
-                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_wash" class="block px-3 py-1.5 rounded-xl text-stone-600 hover:text-[#B58E3E]">
+                        <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/products?category=body_wash" class="block px-3 py-1.5 rounded-none text-stone-600 hover:text-[#B58E3E]">
                             Body Wash (4)
                         </a>
                     </div>
                 </div>
 
                 <!-- Wishlist in Mobile Drawer -->
-                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/wishlist" class="flex items-center justify-between px-4 py-2.5 rounded-2xl font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
+                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/wishlist" class="flex items-center justify-between px-4 py-2.5 rounded-none font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
                     <span class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-[#B58E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                         <span>Wishlist</span>
                     </span>
-                    <span class="text-xs font-bold text-[#B58E3E] bg-[#F5EFEB] px-2 py-0.5 rounded-full">2</span>
+                    <span class="wishlist-badge-count text-xs font-bold text-[#B58E3E] bg-[#F5EFEB] px-2 py-0.5 rounded-none">2</span>
                 </a>
 
                 <!-- About in Mobile Drawer -->
-                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/about" class="block px-4 py-2.5 rounded-2xl font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
+                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/about" class="block px-4 py-2.5 rounded-none font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
                     About
                 </a>
 
                 <!-- Contact in Mobile Drawer -->
-                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/contact" class="block px-4 py-2.5 rounded-2xl font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
+                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/contact" class="block px-4 py-2.5 rounded-none font-bold text-sm text-stone-700 hover:bg-[#F5EFEB]">
                     Contact
                 </a>
             </div>
 
             <!-- Drawer Auth Section (Sign In / Register) -->
-            <div class="p-4 border-t border-[#EADFC7] bg-white space-y-2">
-                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/login" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#B58E3E] to-[#C5A059] text-white text-xs font-bold shadow-xs hover:from-[#997528] hover:to-[#B58E3E] transition-all flex items-center justify-center gap-2">
+            <div class="p-4 border-t border-[#EADFC7] bg-white space-y-2 shrink-0">
+                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/login" class="w-full py-2.5 px-4 rounded-none bg-gradient-to-r from-[#B58E3E] to-[#C5A059] text-white text-xs font-bold shadow-xs hover:from-[#997528] hover:to-[#B58E3E] transition-all flex items-center justify-center gap-2">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
                     <span>Sign In</span>
                 </a>
-                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/register" class="w-full py-2.5 px-4 rounded-xl bg-[#FAF7F2] text-stone-800 border border-[#EADFC7] hover:border-[#B58E3E] text-xs font-bold transition-all flex items-center justify-center gap-2">
+                <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/register" class="w-full py-2.5 px-4 rounded-none bg-[#FAF7F2] text-stone-800 border border-[#EADFC7] hover:border-[#B58E3E] text-xs font-bold transition-all flex items-center justify-center gap-2">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
                     <span>Create Account</span>
                 </a>
             </div>
 
             <!-- Drawer Footer: Language Switcher -->
-            <div class="p-4 border-t border-[#EADFC7] bg-[#FAF7F2] space-y-3">
-                <div class="text-xs font-bold text-stone-500 uppercase tracking-wider">
+            <div class="p-4 border-t border-[#EADFC7] bg-[#FAF7F2] space-y-3 shrink-0">
+                <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider">
                     Language
                 </div>
                 <div class="grid grid-cols-2 gap-2">
                     <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/wishlist" 
-                       class="py-2 px-3 rounded-xl border text-center text-xs font-bold flex items-center justify-center gap-1.5 bg-[#B58E3E] text-white border-[#B58E3E] shadow-sm">
+                       class="py-2 px-3 rounded-none border text-center text-xs font-bold flex items-center justify-center gap-1.5 bg-[#B58E3E] text-white border-[#B58E3E] shadow-sm">
                         <span>🇬🇧</span> English
                     </a>
                     <a href="https://suensereypanha-maker.github.io/third_Liva_skincare/km/wishlist" 
-                       class="py-2 px-3 rounded-xl border text-center text-xs font-bold flex items-center justify-center gap-1.5 bg-white text-stone-700 border-[#EADFC7]">
+                       class="py-2 px-3 rounded-none border text-center text-xs font-bold flex items-center justify-center gap-1.5 bg-white text-stone-700 border-[#EADFC7]">
                         <span>🇰🇭</span> ភាសាខ្មែរ
                     </a>
                 </div>
@@ -334,7 +335,7 @@
 
         </div>
     </div>
-</header>
+
 
 <!-- Mobile Bottom Navigation Bar (5 tabs: Home, Products, Wishlist, Cart, Account) -->
 <nav class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EADFC7] py-1.5 px-2 flex items-center justify-around sm:hidden shadow-lg shadow-stone-800/10">
