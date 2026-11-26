@@ -9,7 +9,7 @@
     <div class="flex items-center justify-between pb-6 border-b border-[#EADFC7] mb-8">
         <div>
             <h1 class="text-2xl sm:text-3xl font-black font-brand text-stone-900 tracking-tight flex items-center gap-3">
-                <span class="w-2.5 h-7 rounded-full bg-[#B58E3E]"></span>
+                <span class="w-2.5 h-7 rounded-none bg-[#B58E3E]"></span>
                 <span>{{ __('frontend.cart.title') }}</span>
             </h1>
             <p class="text-xs text-stone-500 mt-1">
@@ -39,7 +39,7 @@
                     
                     <!-- Product Info & Thumb -->
                     <div class="flex items-center gap-4 w-full sm:w-auto">
-                        <div class="w-20 h-20 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7] p-2 flex items-center justify-center shrink-0">
+                        <div class="w-20 h-20 rounded-none bg-[#FAF7F2] border border-[#EADFC7] p-2 flex items-center justify-center shrink-0">
                             <img src="{{ $item['image'] }}" alt="{{ $itemName }}" class="w-full h-full object-contain">
                         </div>
                         <div>
@@ -63,10 +63,10 @@
                     <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-t-0 border-[#F5EFEB]">
                         
                         <!-- Stepper -->
-                        <div class="flex items-center border border-[#EADFC7] rounded-xl bg-[#FAF7F2] p-0.5">
+                        <div class="flex items-center border border-[#EADFC7] rounded-none bg-[#FAF7F2] p-0.5">
                             <button type="button" 
                                     onclick="changeCartQty(this, -1)"
-                                    class="w-7 h-7 rounded-lg bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
+                                    class="w-7 h-7 rounded-none bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
                                 -
                             </button>
                             <input type="number" 
@@ -76,7 +76,7 @@
                                    class="cart-item-qty w-10 text-center bg-transparent border-0 font-bold text-xs text-stone-800 focus:outline-none focus:ring-0">
                             <button type="button" 
                                     onclick="changeCartQty(this, 1)"
-                                    class="w-7 h-7 rounded-lg bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
+                                    class="w-7 h-7 rounded-none bg-white text-stone-600 hover:text-[#B58E3E] flex items-center justify-center font-bold text-xs shadow-xs cursor-pointer active:scale-95 transition-all">
                                 +
                             </button>
                         </div>
@@ -116,7 +116,7 @@
 
             <!-- Continue Shopping Outline Button -->
             <div class="pt-4">
-                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-[#EADFC7] text-stone-700 hover:text-[#B58E3E] hover:bg-[#FAF7F2] text-xs sm:text-sm font-bold transition-all">
+                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-none border border-[#EADFC7] text-stone-700 hover:text-[#B58E3E] hover:bg-[#FAF7F2] text-xs sm:text-sm font-bold transition-all">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     <span>{{ __('frontend.cart.continue_shopping') }}</span>
                 </a>
@@ -157,10 +157,10 @@
                                id="cart-coupon-input"
                                placeholder="{{ __('frontend.cart.coupon_placeholder') }}" 
                                value="LIVAGLOW"
-                               class="w-full bg-[#FAF7F2] border border-[#EADFC7] rounded-xl px-3.5 py-2.5 text-xs text-stone-800 focus:outline-none focus:border-[#B58E3E] pr-20 uppercase font-semibold">
+                               class="w-full bg-[#FAF7F2] border border-[#EADFC7] rounded-none px-3.5 py-2.5 text-xs text-stone-800 focus:outline-none focus:border-[#B58E3E] pr-20 uppercase font-semibold">
                         <button type="submit" 
                                 id="cart-coupon-btn"
-                                class="absolute right-1 px-3 py-1.5 rounded-lg bg-[#B58E3E] text-white text-[11px] font-bold hover:bg-[#997528] transition-colors cursor-pointer active:scale-95">
+                                class="absolute right-1 px-3 py-1.5 rounded-none bg-[#B58E3E] text-white text-[11px] font-bold hover:bg-[#997528] transition-colors cursor-pointer active:scale-95">
                             {{ __('frontend.cart.apply_coupon') }}
                         </button>
                     </form>

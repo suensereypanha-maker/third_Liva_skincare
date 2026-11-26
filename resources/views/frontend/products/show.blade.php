@@ -190,10 +190,10 @@
                 <div class="pt-2 space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                         <!-- Stepper -->
-                        <div class="flex items-center justify-center border border-[#EADFC7] bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
+                        <div class="flex items-center justify-between sm:justify-center border border-[#EADFC7] bg-[#FAF7F2] p-1 w-full sm:w-auto shrink-0">
                             <button type="button" 
                                     onclick="let q = document.getElementById('product-qty'); if(parseInt(q.value) > 1) q.value = parseInt(q.value) - 1;"
-                                    class="w-9 h-9  bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
                                 -
                             </button>
                             <input type="number" 
@@ -204,33 +204,34 @@
                                    class="w-14 text-center bg-transparent border-0 font-bold text-sm text-stone-800 focus:outline-none focus:ring-0">
                             <button type="button" 
                                     onclick="let q = document.getElementById('product-qty'); q.value = parseInt(q.value) + 1;"
-                                    class="w-9 h-9  bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
+                                    class="w-9 h-9 bg-white text-stone-700 hover:text-[#B58E3E] shadow-xs flex items-center justify-center font-bold text-sm">
                                 +
                             </button>
                         </div>
 
-                        <!-- Add to Cart (Brushed Luxury Gold) -->
-                        <button type="button" 
-                                onclick="showToast('{{ __('frontend.header.cart') }}', 'Added {{ $name }}');"
-                                class="w-full sm:flex-1 py-3.5 px-6  bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-bold text-xs sm:text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                            <span>{{ __('frontend.catalog.add_to_cart') }}</span>
-                        </button>
+                        <!-- Action Buttons Group (Add to Cart + Wishlist side-by-side on mobile) -->
+                        <div class="flex items-center gap-2.5 sm:gap-3 flex-1 w-full">
+                            <!-- Add to Cart (Brushed Luxury Gold) -->
+                            <button type="button" 
+                                    onclick="showToast('{{ __('frontend.header.cart') }}', 'Added {{ $name }}'); if (document.getElementById('cart-badge-count')) { let b = document.getElementById('cart-badge-count'); b.textContent = (parseInt(b.textContent || '0', 10) + parseInt(document.getElementById('product-qty').value || '1', 10)); }"
+                                    class="flex-1 py-3.5 px-4 sm:px-6 bg-gradient-to-r from-[#B58E3E] to-[#C5A059] hover:from-[#997528] hover:to-[#B58E3E] text-white font-bold text-xs sm:text-sm shadow-md shadow-stone-800/15 active:scale-95 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                                <span>{{ __('frontend.catalog.add_to_cart') }}</span>
+                            </button>
 
-                        <!-- Add to Wishlist / Favorite Button -->
-                        <button type="button" 
-                                data-wishlist-slug="{{ $product['slug'] }}"
-                                onclick="toggleWishlist('{{ $product['slug'] }}', '{{ addslashes($name) }}', this);" 
-                                title="{{ __('frontend.header.wishlist') }}"
-                                class="wishlist-toggle-btn w-12 h-12 rounded-none bg-white border border-[#EADFC7] hover:border-[#B58E3E] text-stone-500 hover:text-[#B58E3E] flex items-center justify-center shrink-0 shadow-xs transition-all">
-                            <svg class="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </button>
-
-                       
+                            <!-- Add to Wishlist / Favorite Button -->
+                            <button type="button" 
+                                    data-wishlist-slug="{{ $product['slug'] }}"
+                                    onclick="toggleWishlist('{{ $product['slug'] }}', '{{ addslashes($name) }}', this);" 
+                                    title="{{ __('frontend.header.wishlist') }}"
+                                    class="wishlist-toggle-btn w-12 h-12 rounded-none bg-white border border-[#EADFC7] hover:border-[#B58E3E] text-stone-500 hover:text-[#B58E3E] flex items-center justify-center shrink-0 shadow-xs transition-all">
+                                <svg class="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -241,7 +242,7 @@
 
         <!-- Tabs Section: Description, Reviews, and 'How to Use' (Image 3: replace to how to use) -->
         <div class="mt-12 pt-8 border-t border-[#EADFC7]">
-            <div class="flex items-center gap-8 border-b border-[#EADFC7] text-sm font-bold">
+            <div class="flex items-center gap-6 sm:gap-8 border-b border-[#EADFC7] text-sm font-bold overflow-x-auto scrollbar-none whitespace-nowrap">
                 <button type="button" 
                         id="tab-btn-desc"
                         onclick="switchTab('desc')"
@@ -273,14 +274,14 @@
 
             <!-- Tab Content: Reviews -->
             <div id="tab-pane-reviews" class="hidden py-5 space-y-4">
-                <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7]">
+                <div class="p-4 rounded-none bg-[#FAF7F2] border border-[#EADFC7]">
                     <div class="flex items-center justify-between mb-1">
                         <span class="font-bold text-xs text-stone-800">Sophea C.</span>
                         <span class="text-[11px] text-[#C5A059]">★★★★★</span>
                     </div>
                     <p class="text-xs text-stone-600">The texture is heavenly! Absorbs quickly without any greasiness, and my skin feels deeply nourished every morning.</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7]">
+                <div class="p-4 rounded-none bg-[#FAF7F2] border border-[#EADFC7]">
                     <div class="flex items-center justify-between mb-1">
                         <span class="font-bold text-xs text-stone-800">Jessica L.</span>
                         <span class="text-[11px] text-[#C5A059]">★★★★★</span>
@@ -295,18 +296,18 @@
                     {{ __('frontend.product_detail.how_to_use_desc') }}
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                    <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7]">
-                        <span class="w-6 h-6 rounded-full bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">1</span>
+                    <div class="p-3.5 rounded-none bg-[#FAF7F2] border border-[#EADFC7]">
+                        <span class="w-6 h-6 rounded-none bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">1</span>
                         <h5 class="text-xs font-bold text-stone-800">{{ app()->getLocale() === 'km' ? 'សម្អាតផ្ទៃមុខ' : 'Purify & Tone' }}</h5>
                         <p class="text-[11px] text-stone-500 mt-1">{{ app()->getLocale() === 'km' ? 'លាងសម្អាតមុខ និងជូតទឹក Toner' : 'Start with clean, toned skin.' }}</p>
                     </div>
-                    <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7]">
-                        <span class="w-6 h-6 rounded-full bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">2</span>
+                    <div class="p-3.5 rounded-none bg-[#FAF7F2] border border-[#EADFC7]">
+                        <span class="w-6 h-6 rounded-none bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">2</span>
                         <h5 class="text-xs font-bold text-stone-800">{{ app()->getLocale() === 'km' ? 'កម្ដៅគ្រីម' : 'Warm & Activate' }}</h5>
                         <p class="text-[11px] text-stone-500 mt-1">{{ app()->getLocale() === 'km' ? 'ត្រដុសលើចុងម្រាមដៃថ្នមៗ' : 'Warm a pea-sized amount between fingertips.' }}</p>
                     </div>
-                    <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#EADFC7]">
-                        <span class="w-6 h-6 rounded-full bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">3</span>
+                    <div class="p-3.5 rounded-none bg-[#FAF7F2] border border-[#EADFC7]">
+                        <span class="w-6 h-6 rounded-none bg-[#B58E3E] text-white flex items-center justify-center text-xs font-bold mb-2">3</span>
                         <h5 class="text-xs font-bold text-stone-800">{{ app()->getLocale() === 'km' ? 'ម៉ាស្សាជារង្វង់' : 'Gently Massage' }}</h5>
                         <p class="text-[11px] text-stone-500 mt-1">{{ app()->getLocale() === 'km' ? 'ម៉ាស្សាឡើងលើរហូតដល់ជ្រាបសព្វ' : 'Smooth in gentle upward motions over face & neck.' }}</p>
                     </div>
