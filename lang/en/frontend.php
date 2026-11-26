@@ -107,6 +107,11 @@ return [
         'shipping_info' => 'Shipping Info',
         'banner_heading' => 'Wake Up with Healthy & Glowing Skin',
         'detail_desc' => 'Liva Night Cream helps to nourish and repair your skin while you sleep. Formulated with golden botanical extracts to wake up with silky soft, smooth, and radiant skin.',
+        'share' => 'Share',
+        'share_facebook' => 'Share on Facebook',
+        'share_instagram' => 'Share on Instagram',
+        'share_telegram' => 'Share on Telegram',
+        'instagram_copied' => 'Product link copied! Paste it on Instagram to share.',
     ],
 
     'cart' => [

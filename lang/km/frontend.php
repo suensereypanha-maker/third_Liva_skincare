@@ -107,6 +107,11 @@ return [
         'shipping_info' => 'ព័ត៌មានដឹកជញ្ជូន',
         'banner_heading' => 'ភ្ញាក់ឡើងជាមួយស្បែកមានសុខភាពល្អ និងភ្លឺថ្លា',
         'detail_desc' => 'Liva Night Cream ជួយចិញ្ចឹម និងជួសជុលស្បែករបស់អ្នកពេលកំពុងគេងលក់។ ផ្សំពីសារធាតុរុក្ខជាតិមាស ភ្ញាក់ឡើងជាមួយស្បែកទន់ រលោង និងភ្លឺថ្លាស្រស់ថ្លា។',
+        'share' => 'ចែករំលែក',
+        'share_facebook' => 'ចែករំលែកលើ Facebook',
+        'share_instagram' => 'ចែករំលែកលើ Instagram',
+        'share_telegram' => 'ចែករំលែកលើ Telegram',
+        'instagram_copied' => 'បានចម្លងតំណផលិតផល! សូមបិទភ្ជាប់លើ Instagram ដើម្បីចែករំលែក។',
     ],
 
     'cart' => [

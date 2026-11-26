@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Liva Luxury Skincare - ' . __('frontend.brand.tagline'))</title>
+    @yield('meta')
 
     <!-- Google Fonts for English (Plus Jakarta Sans & Playfair Display) and Khmer (Kantumruy Pro) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
